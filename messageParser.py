@@ -58,7 +58,7 @@ def read_header():
         bytes += next_byte()
     return int.fromBytes(bytes, "big")
 
-def convert_bytes():
+def convert_byte():
     '''
     handles byte to int conversion
 
@@ -74,6 +74,7 @@ def next_line():
     convert to ascii
     if newline
         stop
+        converted bytes containing ascii characters from file
         return string of converted bytes
     :return:
     '''
