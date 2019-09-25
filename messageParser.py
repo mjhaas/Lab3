@@ -58,17 +58,9 @@ def read_header():
         bytes += next_byte()
     return int.fromBytes(bytes, "big")
 
-def convert_byte():
-    '''
-    handles byte to int conversion
-
-    :return:
-    '''
-
 def next_line():
     '''
     read bytes until new line reached
-
 
     read byte
     convert to ascii
@@ -78,4 +70,10 @@ def next_line():
         return string of converted bytes
     :return:
     '''
-
+    string = []
+    byte = next_byte()
+    while byte.decode('ascii') != '\n':
+    #while byte.decode('ascii') != b'0x0A':
+        string += byte.decode()
+        byte = next_byte()
+    return string + '\n'
