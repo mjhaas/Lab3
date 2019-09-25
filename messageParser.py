@@ -65,7 +65,7 @@ def convert_bytes():
     :return:
     '''
 
-def nextLine():
+def next_line():
     '''
     read bytes until new line reached
 
