@@ -50,7 +50,7 @@ def main_controller():
 def read_header():
     '''
     reads header line to get number of lines
-    :return: int
+    :return: the number of lines in the file as an int
     '''
 
     bytes = next_byte()
@@ -60,7 +60,7 @@ def read_header():
 
 def convert_bytes():
     '''
-    handles byte to int conversion
+    handles byte to character conversion
 
     :return:
     '''
@@ -75,6 +75,6 @@ def next_line():
     if newline
         stop
         return string of converted bytes
-    :return:
+    :return: a string containing the message file
     '''
 
