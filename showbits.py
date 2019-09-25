@@ -10,7 +10,6 @@ def bits(v, numbits=None):
                     not showing any leading zeros.
     """
 
-#editititititiititit
     _check_version()
     if type(v) is bytes:
         if numbits:
