@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4fdfe93-447c-476e-8a66-78ccbf8cfdce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/messageParser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/showbits.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messageParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/messageParser.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569426096465</updated>
-      <workItem from="1569426097597" duration="683000" />
+      <workItem from="1569426097597" duration="2846000" />
     </task>
     <servers />
   </component>
