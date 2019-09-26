@@ -20,6 +20,9 @@ read in first for bytes
 
 '''
 
+message = bytearray.fromhex('00 00 00 02 44 41 44 0A 42 4F 44 0A')  # DAD\nBOD\n
+list_iter = message.__iter__()
+
 
 def next_byte():
     """
@@ -29,34 +32,48 @@ def next_byte():
     If the sender is done sending and is waiting for your response, this method blocks indefinitely.
 
     :return: the next byte, as a bytes object with a single byte in it
+    :author: Joseph Skubal
     """
+    byte = list_iter.__next__()
+    print(byte)
+    return byte.to_bytes(1, 'big')
 
 
 def main_controller():
     '''
-    handles calls to next byte
-    :return:
+    Directs the program, assembling the lines of text that were read in.
+
+    :author: Joseph Skubal
     '''
-    '''
-    string = []
-    upper bound = read_header()
-    while lineIndex < upper bound:
-        string += nextLine()
-        increment lineIndex
-        
-    print(string)
-    '''
+
+    # Joseph Skubal wuz here
+    lines = list()
+    upper_bound = read_header()
+    print(upper_bound)  # fixme remove after testing
+    while len(lines) < upper_bound:
+        lines.append(next_line())
+
+    combined = ''
+    for element in lines:
+        combined += str(element) + "\n"
+    export_string(combined.rstrip())  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
+
 
 def read_header():
     '''
-    reads header line to get number of lines
-    :return: int
+    reads message header line to get number of lines in file
+
+    :return: Then number of lines in the rest of the file as an integer
+    :author: Joseph Skubal
     '''
 
+    # Jospeh Skubal wuz here
     bytes = next_byte()
-    for i in range (1,3):
+    for i in range(0, 3):
         bytes += next_byte()
-    return int.fromBytes(bytes, "big")
+    print(bytes)  # fixme remove after testing
+    return int.from_bytes(bytes, "big")
+
 
 def next_line():
     '''
@@ -70,6 +87,7 @@ def next_line():
         return string of converted bytes
     :return:
     '''
+
     string = []
     byte = next_byte()
     while byte.decode('ascii') != '\n':
@@ -77,3 +95,20 @@ def next_line():
         string += byte.decode()
         byte = next_byte()
     return string + '\n'
+=======
+
+
+def export_string(string):
+    """
+    fixme Prints the string to the console
+    This method may end up writing the string to a file, or doing
+    something so totally tubular, we can't even conceive of it right now.
+
+    :param string: the string to be exported
+    """
+    print("\nMessage follows:")
+    print(string)
+
+
+# Run the program for testing purposes
+main_controller()
