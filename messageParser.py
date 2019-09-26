@@ -52,7 +52,11 @@ def main_controller():
     print(upper_bound)  # fixme remove after testing
     while len(lines) < upper_bound:
         lines.append(next_line())
-    export_string(str(lines))
+
+    combined = ''
+    for element in lines:
+        combined += str(element) + "\n"
+    export_string(combined.rstrip())  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
 
 
 def read_header():
@@ -101,9 +105,9 @@ def export_string(string):
 
     :param string: the string to be exported
     """
+    print("\nMessage follows:")
     print(string)
 
 
-
-#Run the program for testing purposes
+# Run the program for testing purposes
 main_controller()
