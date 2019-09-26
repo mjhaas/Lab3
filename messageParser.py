@@ -75,26 +75,27 @@ def read_header():
     return int.from_bytes(bytes, "big")
 
 
-def convert_bytes():
-    '''
-    handles byte to string conversion
-
-    :return:
-    '''
-
-
 def next_line():
     '''
     read bytes until new line reached
-
 
     read byte
     convert to ascii
     if newline
         stop
+        converted bytes containing ascii characters from file
         return string of converted bytes
     :return:
     '''
+
+    string = []
+    byte = next_byte()
+    while byte.decode('ascii') != '\n':
+    #while byte.decode('ascii') != b'0x0A':
+        string += byte.decode()
+        byte = next_byte()
+    return string + '\n'
+=======
 
 
 def export_string(string):
