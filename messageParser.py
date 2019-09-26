@@ -57,6 +57,7 @@ def main_controller():
     for element in lines:
         combined += str(element) + "\n"
     export_string(combined.rstrip())  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
+    #export_string(combined)  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
 
 
 def read_header():
@@ -88,14 +89,13 @@ def next_line():
     :return:
     '''
 
-    string = []
+    string = ''
     byte = next_byte()
     while byte.decode('ascii') != '\n':
     #while byte.decode('ascii') != b'0x0A':
         string += byte.decode()
         byte = next_byte()
-    return string + '\n'
-=======
+    return string
 
 
 def export_string(string):
