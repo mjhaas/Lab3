@@ -19,8 +19,14 @@ read number length # of times (send length)
 read in first for bytes
 
 '''
+with open('file.in') as file:
+    fileText = file.read()
+    file.close()
+print(fileText)
 
-message = bytearray.fromhex('00 00 00 02 44 41 44 0A 42 4F 44 0A')  # DAD\nBOD\n
+#message = bytearray.fromhex('00 00 00 02 44 41 44 0A 42 4F 44 0A')  # DAD\nBOD\n
+message = bytearray.fromhex(fileText)  # DAD\nBOD\n
+
 list_iter = message.__iter__()
 
 
@@ -57,7 +63,6 @@ def main_controller():
     for element in lines:
         combined += str(element) + "\n"
     export_string(combined.rstrip())  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
-    #export_string(combined)  # fixme a bit sloppy to put the whitespace on, then stip it. Revise
 
 
 def read_header():
@@ -108,6 +113,11 @@ def export_string(string):
     """
     print("\nMessage follows:")
     print(string)
+
+    writtenFile = 'output.txt'
+    with open(writtenFile, 'w') as file:
+        file.write(string)
+        file.close()
 
 
 # Run the program for testing purposes
