@@ -108,7 +108,7 @@ def export_string(string):
     fixme Prints the string to the console
     This method may end up writing the string to a file, or doing
     something so totally tubular, we can't even conceive of it right now.
-
+    :author: Maat Haas
     :param string: the string to be exported
     """
     print("\nMessage follows:")
