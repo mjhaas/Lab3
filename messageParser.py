@@ -55,7 +55,7 @@ def main_controller():
     # Joseph Skubal wuz here
     lines = list()
     upper_bound = read_header()
-    print(upper_bound)  # fixme remove after testing
+    # print(upper_bound)  # fixme remove after testing
     while len(lines) < upper_bound:
         lines.append(next_line())
 
@@ -108,7 +108,7 @@ def export_string(string):
     fixme Prints the string to the console
     This method may end up writing the string to a file, or doing
     something so totally tubular, we can't even conceive of it right now.
-    :author: Maat Haas
+    :author: Matt Haas
     :param string: the string to be exported
     """
     print("\nMessage follows:")
