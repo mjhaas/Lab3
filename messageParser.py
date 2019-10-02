@@ -42,7 +42,7 @@ def next_byte():
 
 def read_message():
     '''
-    Directs the program, assembling the lines of text that were read in.
+    Directs the program, assembling the lines of text that were read in, and sending them to export
 
     :author: Joseph Skubal
     '''
@@ -56,7 +56,7 @@ def read_message():
 
 def read_header():
     '''
-    reads message header line to get number of lines in file
+    reads message header bytes to get number of lines in message payload
 
     :return: The number of lines in the message as an integer
     :author: Joseph Skubal
@@ -70,7 +70,7 @@ def read_header():
 
 def next_line():
     '''
-    read bytes until new line reached
+    read bytes until new line (\n) reached
 
     :author: Matt Haas
     :return: the next line of text as a string
