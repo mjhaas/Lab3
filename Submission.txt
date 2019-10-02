@@ -5,40 +5,9 @@ Lab 3
 Name:
     Matt Haas
     Joe Skubal
+
+A simple message parser
 '''
-
-'''
-read list
-hasNextElement?
-read element
-read header length
-    return length to header (maybe return sentinel for end?)
-read number length # of times (send length)
-    return characters as byte array? then concatenate
-
-read in first for bytes
-
-'''
-with open('file.in') as file:
-    fileText = file.read()
-    file.close()
-print("File Contents follow:")
-print(fileText)
-message = bytearray.fromhex(fileText)  # DAD\nBOD\n
-
-list_iter = message.__iter__()
-
-
-def next_byte():
-    """
-    draws in the next byte of the pre-made message for testing purposes.
-
-    :return: the next byte, as a bytes object with a single byte in it
-    :author: Joseph Skubal
-    """
-    byte = list_iter.__next__()
-    return byte.to_bytes(1, 'big')
-
 
 def read_message():
     '''
@@ -98,7 +67,3 @@ def export_string(string):
     with open(writtenFile, 'w') as file:
         file.write(string)
         file.close()
-
-
-# Run the program for testing purposes
-read_message()
